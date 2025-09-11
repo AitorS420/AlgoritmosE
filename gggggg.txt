@@ -1,0 +1,119 @@
+#include <iostream>
+using namespace std;
+#include <iostream>
+
+int main()
+{
+    int n, valor, pos;
+    std::cout << "Ingrese tamaño del vector: ";
+    std::cin >> n;
+    int v[n];
+    
+    // lectura
+    for(int i = 0; i < n; i++) {
+        std::cout << "Ingrese dato " << (i + 1) << ": ";
+        std::cin >> v[i];
+    }
+    
+    // mostrar
+    std::cout << "vector: { ";
+    for(int i = 0; i < n; i++) {
+        std::cout << v[i] << " ";
+    }
+    std::cout << "}" << std::endl;
+    
+    //eLIMINAR AL INICIO
+    
+    for (int i=0;i<n;i++){
+        v[i]=v[i+1];
+        
+    }
+    n=n-1;
+    //mostrar
+    cout<<"vector:{ ";
+    for(int i=0;i<n;i++){
+        cout<<v[i]<<"   ";
+    }
+    
+    
+    
+    /*
+    //ingresar aL INICIO
+    cout<<"Ingrese valor a agrgar: ";
+   cin>>valor;
+   n=n+1;
+   for(int i=n;i>0;i++)
+    cout<<v[i]<<" ";
+    cout<<"}<\n";
+    */
+    
+   /**
+   cout<<"Ingrese valor a agrgar: ";
+   cin>>valor;
+   v[n]=valor;
+   n=n+1;
+   //mostrar Elemento
+   std::cout << "vector: { ";
+    for(int i = 0; i < n; i++) {
+        std::cout << v[i] << " ";
+    }
+    std::cout << "}" << std::endl;
+   */
+   
+   
+  
+    
+   /** 
+    cout<<"Ingrese posicion a actualizar";
+    cin>>pos;
+    int opc=-1;
+    
+    cout<<"Ingrese valor a actualizar";
+    cin>>valor;
+    
+    for(int i = 0; i < n; i++){
+        if (pos>-1 && pos<n){
+            v[pos]=valor;
+            opc=0;
+        }
+    }
+     if(opc==-1){
+         cout<<"Elemento no encontrado";
+     }else{
+         cout<<"Elemento actualizado, valor:"<<v[pos];
+     }
+  */
+    
+    
+    
+    /**buscar posición
+    std::cout << "Ingrese valor a buscar: ";
+    std::cin >> valor;
+
+    int posicion = -1; // -1 indica que no se encontró
+
+    for(int i = 0; i < n; i++) {
+        if(v[i] == valor) {
+            posicion = i; // guardamos la posición
+            break;        // si solo quieres la primera aparición
+        }
+    }
+    */
+    // por poscicion
+    
+    /**
+    if(pos != -1) {
+        std::cout << "El valor " << valor << " se encuentra en la posición " << pos << std::endl;
+    } else {
+        std::cout << "El valor no se encontró en el vector." << std::endl;
+    }
+
+    if(pos==-1){
+        cout<<"Elemento no encontrado";
+        
+    }else {
+        cout<<"Elemento encontrado, valor; "<<pos;
+    }*/
+    return 0;
+   
+}
