@@ -1,0 +1,61 @@
+#include <iostream>
+using namespace std;
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int m[3][3] = {
+        {10, 11, 12},
+        {20, 21, 22},
+        {30, 31, 32}
+    };
+
+    int filas = 3;
+    int columnas = 3;
+    int i, j;
+
+    cout << "\nm[i][j] :\n";
+    // Mostrar la matriz
+    for (i = 0; i < filas; i++) {
+        cout << " [ ";
+        for (j = 0; j < columnas; j++) {
+            cout << m[i][j] << "  ";
+        }
+        cout << " ]" << endl;
+    }
+
+    int valor, nuevoValor;
+    bool encontrado = false;
+    cout << "\nIngrese el valor a buscar para actualizar: ";
+    cin >> valor;
+
+    // Buscar el valor en la matriz y actualizarlo
+    for (i = 0; i < filas; i++) {
+        for (j = 0; j < columnas; j++) {
+            if (m[i][j] == valor) {
+                cout << "Valor encontrado en la posición [" << i << "][" << j << "]\n";
+                cout << "Ingrese el nuevo valor para esta posición: ";
+                cin >> nuevoValor;
+                m[i][j] = nuevoValor;  // Actualizar el valor
+                encontrado = true;
+            }
+        }
+    }
+
+    if (!encontrado) {
+        cout << "Valor no encontrado en la matriz.\n";
+    } else {
+        cout << "\nMatriz actualizada:\n";
+        // Mostrar la matriz actualizada
+        for (i = 0; i < filas; i++) {
+            cout << " [ ";
+            for (j = 0; j < columnas; j++) {
+                cout << m[i][j] << "  ";
+            }
+            cout << " ]" << endl;
+        }
+    }
+
+    return 0;
+}
