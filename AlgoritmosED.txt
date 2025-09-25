@@ -1,0 +1,152 @@
+#include <iostream>
+using namespace std;
+
+class Node
+{
+    public:
+    int key;
+    Node* next;
+};
+
+Node* newNode(int key, Node* next)
+{
+    Node* node = new Node;
+    node->key = key;
+    
+    node ->next = next;
+    
+    return node;
+}
+Node* constructList(){
+    Node* head = newNode(1, newNode(2, newNode(3, nullptr)));
+    return head;
+    
+}
+
+void printList(Node* head)
+{
+    Node* ptr = head;
+    while(ptr){
+        cout << ptr->key<< " -> ";
+        ptr = ptr->next;
+    }
+    cout << "nulllptr";
+}
+int main(){
+    Node *head = constructList();
+    printList(head);
+    return 0;
+}
+
+
+
+
+#include <iostream>
+using namespace std;
+
+class  Node{
+    public:
+    int key;
+    Node* next;
+};
+
+//Funcion nuevo nodo
+Node* newNode(int key)
+{
+    Node* node = new Node;
+    node->key = key;
+    
+    node->next = nullptr;
+    
+    return node;
+
+}
+Node *construcList()
+{
+Node* first = newNode(1);
+Node* second = newNode(2);
+Node* third = newNode(3);
+
+//Reorganizar
+
+Node* head = first;
+first->next = second;
+second->next = third;
+
+return head;
+    
+}
+void printList(Node* head)
+{
+    Node* ptr = head;
+    while(ptr){
+        cout << ptr->key<< " -> ";
+        ptr = ptr->next;
+    }
+    cout << "nulllptr";
+}
+int main()
+{
+    Node *head = construcList();
+    
+    printList(head);
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include <vector>
+#include <iostream>
+using namespace std;
+
+class Node
+{
+    public:
+    int key;
+    Node* next;
+};
+
+Node* newNode(int key, Node* next)
+{
+    Node* node = new Node;
+    node->key = key;
+    
+    node ->next = next;
+    
+    return node;
+}
+Node* construcList(vector<int> const &keys){
+    Node* head, *node = nullptr;
+    for(int i = keys.size()-1; i>=0; i--){
+        node = newNode(keys[i], node);
+        head = node;
+}
+ return head;
+}
+void printList(Node* head)
+{
+    Node* ptr = head;
+    while(ptr){
+        cout << ptr->key<< " -> ";
+        ptr = ptr->next;
+    }
+    cout << "nulllptr";
+}
+int main(){
+    vector<int> keys = {4, 3, 2, 1};
+    
+    Node *head = construcList(keys);
+    printList(head);
+    return 0;
+}
